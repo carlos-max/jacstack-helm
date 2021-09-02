@@ -4,7 +4,6 @@ metadata:
   name: {{ include "theia-carlos.fullname" . }}
   labels:
     {{- include "theia-carlos.labels" . | nindent 4 }}
-  namespace: {{ include "theia-carlos.fullname" . }}
 {{- with .Values.configMapData}}
 data:
   {{- toYaml . | nindent 2}}
