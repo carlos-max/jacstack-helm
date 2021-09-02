@@ -90,3 +90,6 @@ readinessProbe:
   httpGet:
     path: /
     port: http
+
+configMapData:
+  test: aaaaa
