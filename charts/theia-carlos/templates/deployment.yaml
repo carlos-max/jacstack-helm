@@ -31,10 +31,7 @@ spec:
         - configMap:
             defaultMode: 509
             name: {{ include "theia-carlos.fullname" . }}
-          name: {{ include "theia-carlos.fullname" . }}
-        - name: {{ include "theia-carlos.fullname" . }}
-          persistentVolumeClaim:
-            claimName: {{ include "theia-carlos.fullname" . }}
+          name: {{ include "theia-carlos.fullname" . }}-volume
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
