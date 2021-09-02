@@ -29,7 +29,12 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
         - configMap:
+            defaultMode: 509
             name: {{ include "theia-carlos.fullname" . }}
+          name: {{ include "theia-carlos.fullname" . }}
+        - name: {{ include "theia-carlos.fullname" . }}
+          persistentVolumeClaim:
+            claimName: {{ include "theia-carlos.fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
