@@ -31,7 +31,7 @@ spec:
         - configMap:
             defaultMode: 509
             name: {{ include "theia-carlos.fullname" . }}
-          name: {{ include "theia-carlos.fullname" . }}-volume
+          name: {{ include "theia-carlos.fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
